@@ -1,6 +1,6 @@
-import { motion } from "framer-motion";
-import { useRef } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
+import { useRef, useState } from "react";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
 type Award = {
   id: number;
@@ -18,7 +18,8 @@ const awardsData = [
     title: "1st Prize Winner - Hackathon",
     desc: "Tech Connect (YTC) Inter-collegiate Hackathon facilitated by Mr. Daya Nanda Shetty and Hon. Faggan Singh Kulaste",
     date: "2024-02-25",
-    imgUrl: "https://media.licdn.com/dms/image/v2/D5622AQFcNdnz3OBfFA/feedshare-shrink_1280/feedshare-shrink_1280/0/1709875725810?e=1779321600&v=beta&t=s6O4l_o5R18m9ZHd_yiAgqQvbSIJf7FrxXG7HQP-Bro",
+    imgUrl:
+      "https://media.licdn.com/dms/image/v2/D5622AQFcNdnz3OBfFA/feedshare-shrink_1280/feedshare-shrink_1280/0/1709875725810?e=1779321600&v=beta&t=s6O4l_o5R18m9ZHd_yiAgqQvbSIJf7FrxXG7HQP-Bro",
   },
   {
     id: 2,
@@ -26,7 +27,8 @@ const awardsData = [
     title: "3rd Prize - Ideathon",
     desc: "Won ideathon with team members Khushi Rokade, Siddharth Parihar, and Hitesh Mankar through an innovative solution",
     date: "2024-03-09",
-    imgUrl: "",
+    imgUrl:
+      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/kdk.jpeg",
   },
   {
     id: 3,
@@ -34,7 +36,8 @@ const awardsData = [
     title: "2nd Prize - Hackathon",
     desc: "Hackbitz 8-hour hackathon at Jhulelal Institute of Technology with team members Siddharth Parihar and Hitesh Mankar",
     date: "2024-03-15",
-    imgUrl: "",
+    imgUrl:
+      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/ghrce.jpeg",
   },
   {
     id: 4,
@@ -42,7 +45,8 @@ const awardsData = [
     title: "1st Prize - Techathon",
     desc: "Secured 1st place at Techathon hosted by GH Raisoni College of Engineering by developing an innovative solution to a complex real-world problem",
     date: "2024-03-30",
-    imgUrl: "",
+    imgUrl:
+      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/ghrce.jpeg",
   },
   {
     id: 5,
@@ -114,7 +118,7 @@ const awardsData = [
     desc: "Achieved 1st Runner-Up position in a 12-hour hackathon, marking the 10th overall hackathon victory and extending a strong streak of consistent high-performance innovation",
     date: "2025-03-29",
     imgUrl:
-      "https://media.licdn.com/dms/image/v2/D5622AQHr_8qP9Kh3MA/feedshare-shrink_2048_1536/B56ZYLb8_AHEAo-/0/1743948622967?e=1779321600&v=beta&t=jSa2zUyHrOf3VywiVH3A-JJuZwNMEHsC9l-QhnVGznc",
+      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/tgpcet.jpeg",
   },
   {
     id: 13,
@@ -131,7 +135,8 @@ const awardsData = [
     title: "Lead Organizer - Central India Hackathon 2.0",
     desc: "Led and executed Central India Hackathon 2.0, scaling it to one of India’s largest student-led hackathons with 800+ teams and 2000+ developers across 150+ cities",
     date: "2025-06-24",
-    imgUrl: "",
+    imgUrl:
+      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/cih2.jpeg",
   },
   {
     id: 15,
@@ -197,12 +202,12 @@ const awardsData = [
       "https://media.licdn.com/dms/image/v2/D5622AQGaLtIq6KPn4Q/feedshare-shrink_2048_1536/B56Z0EwSnVHoAg-/0/1773901262207?e=1779321600&v=beta&t=Hv9GJdPTP5ShyH7nSKL3S9SUkDSORew2AxCTa7XNxOg",
   },
   {
-    id: 22,
-    num: "22",
-    title: "Hackathon Judge - Krutiverse 2026",
-    desc: "Invited as a judge at Krutiverse Hackathon 2026, evaluating 30+ teams and guiding multi-round selections, emphasizing clarity, execution, and impactful problem-solving",
-    date: "2026-03-24",
-    imgUrl: "https://media.licdn.com/dms/image/v2/D5622AQGG7EFUXwdpzA/feedshare-shrink_2048_1536/B56Z1Y4G3mKgAg-/0/1775312596696?e=1779321600&v=beta&t=hpwui_Dd_-8j4Yq3dzdfHC4SKA1P3gRhRxIVHd6kY30",
+    id: 23,
+    num: "23",
+    title: "Student of the Year",
+    desc: "Awarded Student of the Year in recognition of outstanding academic performance, leadership, and contributions to technical and extracurricular activities",
+    date: "2026-02-23",
+    imgUrl: "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/soty.png",
   },
 ] satisfies Award[];
 
@@ -222,6 +227,13 @@ const formatAwardDate = (date: string) => {
 
 export function Awards() {
   const carouselRef = useRef<HTMLDivElement>(null);
+  const [selectedAward, setSelectedAward] = useState<Award | null>(null);
+
+  const openAwardModal = (award: Award) => {
+    if (window.matchMedia("(min-width: 768px)").matches) {
+      setSelectedAward(award);
+    }
+  };
 
   const scrollLeft = () => {
     if (carouselRef.current) {
@@ -250,116 +262,91 @@ export function Awards() {
       <div className="max-w-[1600px] mx-auto flex flex-col items-center justify-between mb-12 md:mb-20 relative">
         <div className="absolute top-0 left-0 hidden md:block">
           <span className="text-primary/50 text-[10px] sm:text-xs uppercase tracking-widest block">
-            [05] Awards
+            [05] Achievements
           </span>
         </div>
 
         <div className="mx-auto text-center flex flex-col items-center">
           <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-normal tracking-tight leading-[0.95] text-center">
-            <span className="text-primary">Awards &</span>
+            <span className="text-primary">Achievements &</span>
             <br />
-            <span className="text-gray-500 italic font-serif">
-              Recognitions
-            </span>
+            <span className="text-gray-500 italic font-serif">Experience</span>
           </h2>
           <p className="text-[10px] sm:text-xs font-sans text-primary/40 mt-8 tracking-[0.3em] uppercase">
-            © 2021 — 2026
+            © 2022 - 2026
           </p>
-        </div>
-
-        {/* Mobile Carousel Navigation */}
-        <div className="flex md:hidden gap-4 mt-8">
-          <button
-            onClick={scrollLeft}
-            className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-primary hover:bg-white/5 transition-colors"
-          >
-            <ChevronLeft size={20} />
-          </button>
-          <button
-            onClick={scrollRight}
-            className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-primary hover:bg-white/5 transition-colors"
-          >
-            <ChevronRight size={20} />
-          </button>
         </div>
       </div>
 
       {/* Masonry on Desktop / Carousel on Mobile */}
       <div
         ref={carouselRef}
-        className="max-w-[1600px] mx-auto flex md:block overflow-x-auto md:overflow-visible snap-x snap-mandatory md:snap-none hide-scrollbar gap-6 md:gap-8 md:columns-2 lg:columns-3 md:space-y-8"
+        className="max-w-[1600px] mx-auto flex md:block overflow-x-auto md:overflow-visible snap-x snap-mandatory md:snap-none hide-scrollbar gap-6 md:gap-8 md:columns-2 lg:columns-4 md:space-y-8"
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
         {sortedAwardsData.map((award, idx) => {
-          // Generate a varied height so it looks like proper masonry on desktop
-          const isTall = idx === 1 || idx === 3 || idx === 6;
-          const heightClass = isTall
-            ? "h-[600px] lg:h-[700px]"
-            : idx % 2 === 0
-              ? "h-[400px] lg:h-[450px]"
-              : "h-[500px] lg:h-[550px]";
-
           const formattedDate = formatAwardDate(award.date);
 
           return (
             <motion.div
               key={award.id}
+              role="button"
+              tabIndex={0}
+              onClick={() => openAwardModal(award)}
+              onKeyDown={(event) => {
+                if (event.key === "Enter" || event.key === " ") {
+                  event.preventDefault();
+                  openAwardModal(award);
+                }
+              }}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{
                 duration: 0.7,
-                delay: (idx % 3) * 0.15,
+                delay: (idx % 4) * 0.15,
                 ease: [0.16, 1, 0.3, 1],
               }}
               className="break-inside-avoid group cursor-pointer shrink-0 snap-center w-[85vw] md:w-full md:mb-8"
             >
               {/* Image Box */}
               <div
-                className={`relative w-full ${heightClass} overflow-hidden rounded-sm grayscale group-hover:grayscale-0 transition-all duration-700`}
+                className={`relative w-full overflow-hidden rounded-sm grayscale group-hover:grayscale-0 transition-all duration-700`}
                 style={{ backgroundColor: "#0a0a0a" }}
               >
                 <img
                   src={award.imgUrl}
                   alt={award.title}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-[1.05] opacity-80 group-hover:opacity-100"
+                  className="w-full h-auto block transition-transform duration-1000 group-hover:scale-[1.05] opacity-80 group-hover:opacity-100"
                 />
 
                 {/* Thin overlay to map the dark tone in references */}
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/5 transition-colors duration-500" />
 
-                {/* Number [01] */}
-                <div className="absolute top-4 left-5">
-                  <span className="text-[10px] font-mono text-primary/40">
-                    [{award.num}]
-                  </span>
-                </div>
-
-                {/* Center Hover Content (Simulating Logo overlay) */}
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="flex items-center gap-2 px-4 py-2 bg-black/40 backdrop-blur-md rounded-full border border-white/10">
-                    <svg
-                      className="w-4 h-4 text-primary"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-                    </svg>
-                    <span className="text-primary font-medium text-sm tracking-tight">
-                      Kunal
-                    </span>
-                  </div>
-                </div>
-
-                {/* Plus (+) sign */}
-                <div className="absolute bottom-5 right-5 z-10 transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1">
-                  <span className="text-primary/40 text-xl leading-none font-light">
-                    +
-                  </span>
+                {/* Mobile Carousel Navigation */}
+                <div className="absolute inset-x-3 top-1/2 z-20 flex -translate-y-1/2 justify-between md:hidden">
+                  <button
+                    type="button"
+                    aria-label="Previous award"
+                    onClick={(event) => {
+                      event.stopPropagation();
+                      scrollLeft();
+                    }}
+                    className="w-10 h-10 rounded-full border border-white/15 bg-black/45 backdrop-blur-sm flex items-center justify-center text-primary hover:bg-black/70 transition-colors"
+                  >
+                    <ChevronLeft size={20} />
+                  </button>
+                  <button
+                    type="button"
+                    aria-label="Next award"
+                    onClick={(event) => {
+                      event.stopPropagation();
+                      scrollRight();
+                    }}
+                    className="w-10 h-10 rounded-full border border-white/15 bg-black/45 backdrop-blur-sm flex items-center justify-center text-primary hover:bg-black/70 transition-colors"
+                  >
+                    <ChevronRight size={20} />
+                  </button>
                 </div>
               </div>
 
@@ -373,7 +360,7 @@ export function Awards() {
                     {award.desc}
                   </p>
                 </div>
-                <span className="text-[10px] font-mono text-gray-600 whitespace-nowrap mt-1">
+                <span className="text-[12px] font-mono text-primary whitespace-nowrap mt-1">
                   {formattedDate}
                 </span>
               </div>
@@ -381,6 +368,66 @@ export function Awards() {
           );
         })}
       </div>
+
+      <AnimatePresence>
+        {selectedAward && (
+          <motion.div
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 px-4 py-6 backdrop-blur-md"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedAward(null)}
+          >
+            <motion.div
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="award-modal-title"
+              className="relative grid w-full max-w-5xl max-h-[90vh] overflow-hidden rounded-sm border border-white/10 bg-[#080808] text-primary shadow-2xl md:grid-cols-[1.25fr_0.75fr]"
+              initial={{ opacity: 0, y: 24, scale: 0.96 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 24, scale: 0.96 }}
+              transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+              onClick={(event) => event.stopPropagation()}
+            >
+              <button
+                type="button"
+                aria-label="Close award details"
+                onClick={() => setSelectedAward(null)}
+                className="absolute right-4 top-4 z-20 flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-black/55 text-primary backdrop-blur-sm transition-colors hover:bg-primary hover:text-black"
+              >
+                <X size={18} />
+              </button>
+
+              <div className="relative min-h-[320px] bg-black md:min-h-[620px]">
+                <img
+                  src={selectedAward.imgUrl}
+                  alt={selectedAward.title}
+                  className="h-full w-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-black/15" />
+                <span className="absolute left-5 top-5 font-mono text-xs text-primary/60">
+                  [{selectedAward.num}]
+                </span>
+              </div>
+
+              <div className="flex max-h-[90vh] flex-col justify-end overflow-y-auto p-6 sm:p-8 md:p-10">
+                <p className="mb-4 font-mono text-xs uppercase tracking-[0.3em] text-primary/40">
+                  {formatAwardDate(selectedAward.date)}
+                </p>
+                <h3
+                  id="award-modal-title"
+                  className="text-3xl font-normal leading-tight tracking-tight sm:text-4xl"
+                >
+                  {selectedAward.title}
+                </h3>
+                <p className="mt-6 text-sm leading-7 text-primary/65 sm:text-base">
+                  {selectedAward.desc}
+                </p>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Bottom Link matching "All Case Studies" */}
       <div className="max-w-[1600px] mx-auto flex justify-end mt-16 pb-8 border-t border-white/10 pt-8">
