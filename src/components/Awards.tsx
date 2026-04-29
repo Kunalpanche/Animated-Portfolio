@@ -311,13 +311,13 @@ export function Awards() {
             >
               {/* Image Box */}
               <div
-                className={`relative w-full overflow-hidden rounded-sm grayscale group-hover:grayscale-0 transition-all duration-700`}
+                className="relative w-full overflow-hidden rounded-sm md:grayscale md:group-hover:grayscale-0 transition-all duration-700"
                 style={{ backgroundColor: "#0a0a0a" }}
               >
                 <img
                   src={award.imgUrl}
                   alt={award.title}
-                  className="w-full h-auto block transition-transform duration-1000 group-hover:scale-[1.05] opacity-80 group-hover:opacity-100"
+                  className="w-full h-auto block transition-transform duration-1000 opacity-100 md:opacity-80 md:group-hover:scale-[1.05] md:group-hover:opacity-100"
                 />
 
                 {/* Thin overlay to map the dark tone in references */}
