@@ -37,7 +37,7 @@ const awardsData = [
     desc: "Hackbitz 8-hour hackathon at Jhulelal Institute of Technology with team members Siddharth Parihar and Hitesh Mankar",
     date: "2024-03-15",
     imgUrl:
-      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/ghrce.jpeg",
+      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/jit.jpeg",
   },
   {
     id: 4,
