@@ -1,5 +1,6 @@
 import { useRef, useEffect, useState } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
+import { ChevronRight } from 'lucide-react';
 
 // Experience Data
 const experienceData = [
@@ -216,9 +217,6 @@ export function Experience() {
         {/* Left Area (Static Sidebar Header) */}
         <div className="w-full lg:w-1/3 lg:shrink-0 p-8 md:p-12 lg:p-16 flex flex-col justify-center lg:justify-start lg:min-h-[85vh] bg-black lg:border-r border-white/10 z-20">
           <div className="lg:mt-32 my-4 lg:mb-12">
-            <span className="text-primary/50 text-[10px] sm:text-xs uppercase tracking-widest mb-12 block">
-              Experience
-            </span>
             <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-[4.5rem] xl:text-[5.5rem] font-normal tracking-tight leading-[0.95]">
               <span className="text-primary">My</span><br/>
               <span className="text-gray-500 italic font-serif">journey</span>
@@ -231,6 +229,15 @@ export function Experience() {
 
         {/* Right Area (Scrollable Horizontal Track) */}
         <div className="w-full lg:w-2/3 flex items-center overflow-x-auto lg:overflow-hidden border-t lg:border-t-0 border-white/5 h-full relative scroll-smooth [scrollbar-width:none]">
+          <div className="pointer-events-none absolute right-3 top-1/2 z-30 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-black/55 text-primary shadow-2xl backdrop-blur-sm lg:hidden">
+            <motion.div
+              animate={{ x: [0, 7, 0], opacity: [0.55, 1, 0.55] }}
+              transition={{ duration: 1.35, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <ChevronRight size={22} />
+            </motion.div>
+          </div>
+
           <motion.div 
             ref={trackRef}
             style={{ x: isMobile ? 0 : xTransform }}

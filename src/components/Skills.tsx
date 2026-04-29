@@ -103,11 +103,6 @@ export function Skills() {
 
       <div className="max-w-[1600px] mx-auto flex flex-col items-center relative z-10">
         
-        {/* Label */}
-        <span className="text-primary/50 text-[10px] sm:text-xs uppercase tracking-widest block mb-12">
-          [03] Skills
-        </span>
-
         {/* Heading */}
         <div className="text-center mb-16 md:mb-24 px-4">
           <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal tracking-tight leading-[1] mb-6">

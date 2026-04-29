@@ -12,11 +12,6 @@ export function About() {
   return (
     <section id="about" className="bg-black py-20 px-4 md:px-8">
       <div className="bg-[#111]/80 backdrop-blur-md border border-white/5 rounded-[2rem] max-w-6xl mx-auto py-24 px-6 md:px-12 flex flex-col items-center text-center shadow-lg">
-        {/* Label */}
-        <span className="text-primary/50 text-[10px] sm:text-xs uppercase tracking-widest mb-12 block">
-          [01] About
-        </span>
-
         {/* Main Heading */}
         <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl max-w-4xl mx-auto leading-[0.95] sm:leading-[0.9] text-primary mb-16">
           <WordsPullUpMultiStyle segments={headingSegments} />

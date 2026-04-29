@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
 type Award = {
@@ -228,6 +228,21 @@ const formatAwardDate = (date: string) => {
 export function Awards() {
   const carouselRef = useRef<HTMLDivElement>(null);
   const [selectedAward, setSelectedAward] = useState<Award | null>(null);
+  const [isMobileCarousel, setIsMobileCarousel] = useState(() =>
+    typeof window !== "undefined"
+      ? window.matchMedia("(max-width: 767px)").matches
+      : false,
+  );
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 767px)");
+    const handleChange = () => setIsMobileCarousel(mediaQuery.matches);
+
+    handleChange();
+    mediaQuery.addEventListener("change", handleChange);
+
+    return () => mediaQuery.removeEventListener("change", handleChange);
+  }, []);
 
   const openAwardModal = (award: Award) => {
     if (window.matchMedia("(min-width: 768px)").matches) {
@@ -260,12 +275,6 @@ export function Awards() {
     >
       {/* Header section matching reference */}
       <div className="max-w-[1600px] mx-auto flex flex-col items-center justify-between mb-12 md:mb-20 relative">
-        <div className="absolute top-0 left-0 hidden md:block">
-          <span className="text-primary/50 text-[10px] sm:text-xs uppercase tracking-widest block">
-            [05] Achievements
-          </span>
-        </div>
-
         <div className="mx-auto text-center flex flex-col items-center">
           <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-normal tracking-tight leading-[0.95] text-center">
             <span className="text-primary">Achievements &</span>
@@ -299,14 +308,18 @@ export function Awards() {
                   openAwardModal(award);
                 }
               }}
-              initial={{ opacity: 0, y: 30 }}
+              initial={isMobileCarousel ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{
-                duration: 0.7,
-                delay: (idx % 4) * 0.15,
-                ease: [0.16, 1, 0.3, 1],
-              }}
+              transition={
+                isMobileCarousel
+                  ? { duration: 0 }
+                  : {
+                      duration: 0.7,
+                      delay: (idx % 4) * 0.15,
+                      ease: [0.16, 1, 0.3, 1],
+                    }
+              }
               className="break-inside-avoid group cursor-pointer shrink-0 snap-center w-[85vw] md:w-full md:mb-8"
             >
               {/* Image Box */}
@@ -321,7 +334,7 @@ export function Awards() {
                 />
 
                 {/* Thin overlay to map the dark tone in references */}
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/5 transition-colors duration-500" />
+                <div className="absolute inset-0 bg-transparent transition-colors duration-500 md:bg-black/20 md:group-hover:bg-black/5" />
 
                 {/* Mobile Carousel Navigation */}
                 <div className="absolute inset-x-3 top-1/2 z-20 flex -translate-y-1/2 justify-between md:hidden">
@@ -429,18 +442,6 @@ export function Awards() {
         )}
       </AnimatePresence>
 
-      {/* Bottom Link matching "All Case Studies" */}
-      <div className="max-w-[1600px] mx-auto flex justify-end mt-16 pb-8 border-t border-white/10 pt-8">
-        <a
-          href="#awards"
-          className="text-xs uppercase tracking-[0.2em] font-medium text-primary/60 hover:text-primary transition-all duration-300 flex items-center gap-4 group"
-        >
-          <span>[10] All Accolades</span>
-          <div className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center group-hover:border-primary/40 group-hover:bg-primary group-hover:text-black transition-all duration-500">
-            <span className="text-lg leading-none mb-0.5">↗</span>
-          </div>
-        </a>
-      </div>
     </section>
   );
 }
