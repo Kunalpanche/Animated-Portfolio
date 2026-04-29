@@ -73,17 +73,18 @@ export function Hero() {
                 Final-year Computer Engineering student skilled in Python, Data Analysis, and Full Stack Development. Passionate about problem-solving and a 10x National Hackathon Winner.
               </motion.p>
 
-              <motion.button
+              <motion.a
+                href="#contact"
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.7, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                 className="group flex items-center gap-2 bg-primary text-black rounded-full py-1 pl-5 pr-1 hover:gap-3 transition-all duration-300"
               >
-                <span className="font-medium text-sm sm:text-base whitespace-nowrap">View Resume</span>
+                <span className="font-medium text-m sm:text-base whitespace-nowrap font-serif">Let's Connect</span>
                 <div className="bg-black rounded-full flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 transform group-hover:scale-110 transition-transform duration-300">
                   <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
                 </div>
-              </motion.button>
+              </motion.a>
             </div>
           </div>
         </div>
