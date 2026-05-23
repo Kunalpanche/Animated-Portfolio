@@ -38,10 +38,10 @@ export function Footer() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-b border-white/10 mt-16">
         <div className="lg:border-r border-b lg:border-b-0 border-white/10 p-8 sm:p-12 flex flex-col gap-4 text-sm sm:text-base text-gray-400">
           <span className="text-primary/50 text-[10px] uppercase tracking-widest mb-2">Navigation</span>
-          <a href="#about" className="hover:text-primary transition-colors w-fit">About</a>
-          <a href="#projects" className="hover:text-primary transition-colors w-fit">Projects</a>
-          <a href="#experience" className="hover:text-primary transition-colors w-fit">Experience</a>
-          <a href="#skills" className="hover:text-primary transition-colors w-fit">Skills</a>
+          <a href="/#about" className="hover:text-primary transition-colors w-fit">About</a>
+          <a href="/#projects" className="hover:text-primary transition-colors w-fit">Projects</a>
+          <a href="/#experience" className="hover:text-primary transition-colors w-fit">Experience</a>
+          <a href="/#skills" className="hover:text-primary transition-colors w-fit">Skills</a>
         </div>
         <div className="lg:border-r border-b lg:border-b-0 border-white/10 p-8 sm:p-12 flex flex-col gap-4 text-sm sm:text-base text-gray-400">
           <span className="text-primary/50 text-[10px] uppercase tracking-widest mb-2">Socials</span>

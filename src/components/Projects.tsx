@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Plus, ExternalLink, X } from 'lucide-react';
+import { Plus, ExternalLink, X, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const GithubIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
@@ -16,12 +17,14 @@ const GithubIcon = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
-import aiImpactImg from '../assets/aiimpact.jpg';
 import cihImg from '../assets/project/cih.png';
 import websparkImg from '../assets/webspark1.jpg';
 import ayurSetuImg from '../assets/project/Ayursetu.png';
 import iotImg from '../assets/project/iot.png';
 import arMenuImg from '../assets/project/armenu.png';
+import cropImg from '../assets/project/crop.png';
+import smsSpamImg from '../assets/project/smsspam.png';
+import vajraImg from '../assets/project/vajra.jpeg';
 
 const projectsData = [
   {
@@ -50,16 +53,48 @@ const projectsData = [
   },
   {
     num: "02",
-    title: "VoiceShield AI",
-    subtitle: "AI Voice Fraud Detector",
-    desc: "A real-time AI voice fraud detection system built to combat social engineering and deepfake scams. It analyzes audio frequencies using deep learning, determining synthetic speech presence in under 500ms.",
-    tech: ["Python", "PyTorch", "Librosa", "FastAPI", "React"],
-    github: "https://github.com/Kunalpanche/VoiceShield-AI",
-    live: "https://voiceshield.kunal.dev",
-    imgUrl: aiImpactImg,
+    title: "Pothole Detection System",
+    subtitle: "Real-Time AI Road Damage Detection & Analytics Platform",
+    desc: "A real-time pothole detection and road monitoring system built using YOLO and Flask, capable of detecting potholes from uploaded videos, phone cameras, and RTSP/IP streams. The platform provides live analytics, pothole size/depth estimation, PDF reporting, and an interactive dashboard for smart road condition analysis.",
+    features: [
+      "Real-Time Pothole Detection using YOLO",
+      "Support for Video Upload, Phone Camera & RTSP Streams",
+      "Live Detection Dashboard with Analytics",
+      "Pothole Size, Area & Depth Estimation",
+      "Severity Classification (Shallow, Medium, Severe)",
+      "Real-Time Detection Logs & KPI Monitoring",
+      "PDF Report Generation with Detection Data",
+      "GPU Acceleration with CUDA Support",
+      "Low-Latency Threaded Inference Pipeline",
+      "Playback Controls & Stream Management",
+      "Adaptive Frame Optimization for Faster Detection",
+      "Calibration-Based Measurement Improvements"
+    ],
+    tech: ["Python", "Flask", "YOLO", "OpenCV", "Roboflow Supervision", "HTML", "CSS", "JavaScript", "CUDA"],
+    github: "https://github.com/Kunalpanche/Pothole-detection-system.git",
+    live: "",
   },
   {
     num: "03",
+    title: "IndicVoice-Guard",
+    subtitle: "Multilingual AI Voice Fraud Detector",
+    desc: "A deep learning-based AI voice detection system designed to identify synthetic and deepfake voices across multiple Indian languages. The system uses spectrogram analysis, LFCC feature extraction, and CNN-based audio classification to detect AI-generated speech with high accuracy.",
+    features: [
+      "AI-Generated Voice Detection",
+      "Deepfake Audio Detection",
+      "Multilingual Support (Hindi, Tamil, Telugu, Malayalam, English)",
+      "Real-Time Audio Analysis",
+      "Spectrogram & LFCC Feature Fusion",
+      "Temporal & Spectral Pattern Analysis",
+      "Explainable AI Detection Reports",
+      "Robust Against Compressed Audio (WhatsApp/Telegram Voice Notes)"
+    ],
+    tech: ["Python", "TensorFlow", "Librosa", "CNN", "FastAPI", "NumPy"],
+    github: "https://github.com/Kunalpanche/AI-voice-detector.git",
+    live: ""
+  },
+  {
+    num: "04",
     title: "Central India Hackathon Website",
     subtitle: "Pan-India Hackathon Platform",
     desc: "A high-performance event management and registration website that scaled to support 2,000+ developers across 150+ cities for Central India Hackathon. Features automated team matchmaking, real-time rubric-based evaluation for 30+ judges, and instant leaderboard generation.",
@@ -69,7 +104,24 @@ const projectsData = [
     imgUrl: cihImg,
   },
   {
-    num: "04",
+    num: "05",
+    title: "Vajra - Smart Grid Security",
+    subtitle: "Electricity Theft & Tamper Detection System",
+    desc: "An IoT-based hardware solution developed for the Government of Kerala (KSEBL) to detect and prevent unauthorized use of electric fences. The system connects to transformers to monitor electricity exports, featuring an RFID-based tamper-proof authentication system and offline ESP-to-ESP (MAC-to-MAC) data transmission with a 4G SIM module.",
+    features: [
+      "Unauthorized Electric Fence Detection",
+      "Transformer-Level Electricity Export Monitoring",
+      "RFID-based Authentication & Tamper-proofing",
+      "Offline ESP-to-ESP (MAC-to-MAC) Data Transmission",
+      "4G SIM Module Integration for Remote Connectivity"
+    ],
+    tech: ["IoT", "ESP32", "RFID", "4G Module", "C++"],
+    github: "https://github.com/Kunalpanche/Vajra.git",
+    live: "",
+    imgUrl: vajraImg,
+  },
+  {
+    num: "06",
     title: "IoT Automation Suite",
     subtitle: "Arduino IoT & Home Automation",
     desc: "A collection of smart, automated IoT systems developed during an internship at IoTronics Tech Lab. Features Bluetooth-controlled door locks and curtains, keypad lock matrices, and voice-controlled lighting systems to construct custom home automation ecosystems.",
@@ -87,7 +139,7 @@ const projectsData = [
     imgUrl: iotImg,
   },
   {
-    num: "05",
+    num: "07",
     title: "Webspark Platform",
     subtitle: "Learning Management System",
     desc: "An interactive learning management system used to train and mentor over 160+ students. Includes progress trackers, project submission gates, live code playground, and automated feedback loops for assignments.",
@@ -97,7 +149,7 @@ const projectsData = [
     imgUrl: websparkImg,
   },
   {
-    num: "06",
+    num: "08",
     title: "AR Menu",
     subtitle: "AR Restaurant Dining Menu",
     desc: "An interactive Augmented Reality menu platform that modernizes restaurant dining. Customers scan a QR code to view and interact with highly detailed 3D food items right on their tables before ordering.",
@@ -112,16 +164,84 @@ const projectsData = [
     github: "",
     live: "https://ar-menu-production.vercel.app/",
     imgUrl: arMenuImg,
+  },
+  {
+    num: "09",
+    title: "Crop Recommendation System",
+    subtitle: "Machine Learning Crop Advisor",
+    desc: "A machine learning-based system designed to recommend suitable crops based on environmental conditions. The system utilizes various algorithms to analyze factors like soil type, climate, and other parameters to suggest the best crops for optimal yield.",
+    features: [
+      "Predictive Crop Modeling using ML algorithms",
+      "User-friendly Environmental Parameter Inputs",
+      "Optimized Crop Yield Recommendations"
+    ],
+    tech: ["Python", "Scikit-Learn", "Pandas", "NumPy"],
+    github: "https://github.com/Kunalpanche/Crop-Recommendation-System.git",
+    live: "https://crop-recommendation-system-tcwa.onrender.com/",
+    imgUrl: cropImg,
+  },
+  {
+    num: "10",
+    title: "SMS Spam Detection",
+    subtitle: "Machine Learning Spam Classifier",
+    desc: "A machine learning model that takes an SMS as input and predicts whether the message is a spam or not spam message. The model is built using Python and deployed on the web using Streamlit.",
+    features: [
+      "Data collection, cleaning and preprocessing",
+      "Exploratory Data Analysis",
+      "Model building and selection",
+      "Web deployment using Streamlit"
+    ],
+    tech: ["Python", "Scikit-Learn", "Pandas", "NumPy", "Streamlit"],
+    github: "",
+    live: "https://smspamdetect.streamlit.app/",
+    imgUrl: smsSpamImg,
+  },
+  {
+    num: "11",
+    title: "OCR Text Extraction App",
+    subtitle: "Python & Streamlit OCR Application",
+    desc: "A simple OCR-based web app built using Python and Streamlit that extracts text from images using Tesseract OCR.",
+    features: [
+      "Upload image files (PNG / JPG)",
+      "Extract text using OCR",
+      "Simple Streamlit UI",
+      "Download extracted text"
+    ],
+    tech: ["Python", "Streamlit", "Tesseract OCR", "OpenCV", "Pillow"],
+    github: "https://github.com/Kunalpanche/OCR-Text-Extraction-Application.git",
+    live: "",
+  },
+  {
+    num: "12",
+    title: "Sharing Plates",
+    subtitle: "Community Food Redistribution Platform",
+    desc: "A community-driven platform to combat food waste by connecting individuals and organizations with surplus food to NGOs and those in need. Transforms leftover food into an opportunity to help others while reducing environmental waste.",
+    features: [
+      "Surplus Food Listing (Type, Quantity, Location)",
+      "Location-Based Nearby Free Food Search",
+      "NGO Collaboration & Distribution Updates",
+      "Real-time Food Pickup & Delivery Coordination",
+      "Environmental Sustainability & Waste Reduction Impact tracking"
+    ],
+    tech: ["HTML5", "CSS3", "JavaScript", "GitHub Pages"],
+    github: "https://github.com/Kunalpanche/Sharing-Plates.git",
+    live: "https://kunalpanche.github.io/Sharing-Plates/",
   }
 ];
 
-export function Projects() {
+interface ProjectsProps {
+  limit?: number;
+}
+
+export function Projects({ limit }: ProjectsProps = {}) {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
   const [selectedImg, setSelectedImg] = useState<string | null>(null);
 
   const toggleExpand = (index: number) => {
     setExpandedIndex(expandedIndex === index ? null : index);
   };
+
+  const displayedProjects = limit ? projectsData.slice(0, limit) : projectsData;
 
   return (
     <section id="projects" className="bg-black text-primary py-24 md:py-32 px-4 md:px-8 border-t border-white/10 relative">
@@ -141,14 +261,14 @@ export function Projects() {
           {/* Section Description (Right Column) */}
           <div className="max-w-2xl md:pt-4">
             <p className="text-gray-400 text-sm sm:text-base leading-relaxed font-light max-w-xl">
-              A curated selection of applications, systems, and platforms developed to solve real-world problems. Ranging from deep learning voice analytics to massive event scaling platforms.
+              A curated showcase of engineering projects spanning Machine Learning, Computer Vision, IoT Systems, and Full-Stack Development. Each system is built to tackle real-world challenges with high performance and scalable architecture.
             </p>
           </div>
         </div>
 
         {/* Projects Accordion List */}
         <div className="border-t border-b border-white/10 divide-y divide-white/10">
-          {projectsData.map((project, index) => {
+          {displayedProjects.map((project, index) => {
             const isOpen = expandedIndex === index;
 
             return (
@@ -214,12 +334,12 @@ export function Projects() {
                     >
                       <div className="pt-8 md:pt-12 grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
                         {/* Left Side: Subtitle, Description, Mobile Tags, Links */}
-                        <div className="md:col-span-7 flex flex-col justify-between h-full">
+                        <div className={`${project.imgUrl ? 'md:col-span-7' : 'md:col-span-12'} flex flex-col justify-between h-full`}>
                           <div>
                             <h4 className="text-xs uppercase tracking-[0.2em] text-primary/60 font-mono mb-4">
                               {project.subtitle}
                             </h4>
-                            <p className="text-gray-200 text-base md:text-lg leading-relaxed font-normal mb-6 max-w-xl">
+                            <p className={`text-gray-200 text-base md:text-lg leading-relaxed font-normal mb-6 ${project.imgUrl ? 'max-w-xl' : 'max-w-4xl'}`}>
                               {project.desc}
                             </p>
 
@@ -282,22 +402,24 @@ export function Projects() {
                         </div>
 
                         {/* Right Side: Image Showcase */}
-                        <div className="md:col-span-5 w-full">
-                          <motion.div 
-                            initial={{ scale: 0.95, opacity: 0 }}
-                            animate={{ scale: 1, opacity: 1 }}
-                            transition={{ delay: 0.1, duration: 0.4 }}
-                            onClick={() => setSelectedImg(project.imgUrl)}
-                            className="relative aspect-video w-full overflow-hidden rounded-xl border border-white/10 bg-[#0a0a0a] cursor-zoom-in"
-                          >
-                            <img
-                              src={project.imgUrl}
-                              alt={project.title}
-                              className="w-full h-full object-cover opacity-100 block"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/45 to-transparent pointer-events-none" />
-                          </motion.div>
-                        </div>
+                        {project.imgUrl && (
+                          <div className="md:col-span-5 w-full">
+                            <motion.div 
+                              initial={{ scale: 0.95, opacity: 0 }}
+                              animate={{ scale: 1, opacity: 1 }}
+                              transition={{ delay: 0.1, duration: 0.4 }}
+                              onClick={() => setSelectedImg(project.imgUrl!)}
+                              className="relative aspect-video w-full overflow-hidden rounded-xl border border-white/10 bg-[#0a0a0a] cursor-zoom-in"
+                            >
+                              <img
+                                src={project.imgUrl}
+                                alt={project.title}
+                                className="w-full h-full object-cover opacity-100 block"
+                              />
+                              <div className="absolute inset-0 bg-gradient-to-t from-black/45 to-transparent pointer-events-none" />
+                            </motion.div>
+                          </div>
+                        )}
                       </div>
                     </motion.div>
                   )}
@@ -306,6 +428,21 @@ export function Projects() {
             );
           })}
         </div>
+
+        {limit && projectsData.length > limit && (
+          <div className="mt-12 flex justify-end">
+            <Link
+              to="/projects"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'instant' })}
+              className="group flex items-center gap-2 bg-primary text-black rounded-full py-1 pl-5 pr-1 hover:gap-3 transition-all duration-300"
+            >
+              <span className="font-medium text-sm sm:text-base whitespace-nowrap font-serif">Explore All Projects</span>
+              <div className="bg-black rounded-full flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 transform group-hover:scale-110 transition-transform duration-300">
+                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
+              </div>
+            </Link>
+          </div>
+        )}
 
       </div>
 
