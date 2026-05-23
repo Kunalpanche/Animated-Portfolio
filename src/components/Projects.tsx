@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Plus, ExternalLink } from 'lucide-react';
+import { Plus, ExternalLink, X } from 'lucide-react';
 
 const GithubIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
@@ -17,15 +17,39 @@ const GithubIcon = (props: React.SVGProps<SVGSVGElement>) => (
 );
 
 import aiImpactImg from '../assets/aiimpact.jpg';
-import cihImg from '../assets/cih1.jpg';
+import cihImg from '../assets/project/cih.png';
 import websparkImg from '../assets/webspark1.jpg';
-
-// Unsplash placeholder for IoT image
-const iotImg = 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80';
+import ayurSetuImg from '../assets/project/Ayursetu.png';
+import iotImg from '../assets/project/iot.png';
+import arMenuImg from '../assets/project/armenu.png';
 
 const projectsData = [
   {
     num: "01",
+    title: "AyurSetu",
+    subtitle: "AI + AR Ayurveda Platform",
+    desc: "A smart Ayurveda platform that combines AI and Augmented Reality to identify medicinal plants, visualize 3D AR models, suggest remedies, enable 1:1 doctor consultations, and provide an Ayurvedic marketplace with interactive multilingual learning.",
+    features: [
+      "Real-time Medicinal Plant Identification",
+      "3D AR Visualization of Plants",
+      "AI-Based Remedy Suggestor",
+      "1:1 Ayurvedic Doctor Consultancy",
+      "Ayurvedic Marketplace",
+      "Chat With Plant",
+      "Gamified Learning Modules",
+      "Interactive Herbal Education"
+    ],
+    tech: [
+      "React Native",
+      "Node.js",
+      "MongoDB",
+      "LLM"
+    ],
+    github: "https://github.com/Kunalpanche/Ayursetu-Frontend.git",
+    imgUrl: ayurSetuImg,
+  },
+  {
+    num: "02",
     title: "VoiceShield AI",
     subtitle: "AI Voice Fraud Detector",
     desc: "A real-time AI voice fraud detection system built to combat social engineering and deepfake scams. It analyzes audio frequencies using deep learning, determining synthetic speech presence in under 500ms.",
@@ -35,27 +59,35 @@ const projectsData = [
     imgUrl: aiImpactImg,
   },
   {
-    num: "02",
-    title: "CIH Portal",
-    subtitle: "Hackathon Platform",
-    desc: "A high-performance event management and judging platform that scaled to support 2,000+ developers across 150+ cities for Central India Hackathon. Features automated team matchmaking, real-time rubric-based evaluation for 30+ judges, and instant leaderboard generation.",
+    num: "03",
+    title: "Central India Hackathon Website",
+    subtitle: "Pan-India Hackathon Platform",
+    desc: "A high-performance event management and registration website that scaled to support 2,000+ developers across 150+ cities for Central India Hackathon. Features automated team matchmaking, real-time rubric-based evaluation for 30+ judges, and instant leaderboard generation.",
     tech: ["Next.js", "Tailwind CSS", "MongoDB", "Express.js", "Socket.io"],
-    github: "https://github.com/Kunalpanche/CIH-Portal",
-    live: "https://cih.centralindiahackathon.com",
+    github: "",
+    live: "https://phenomenal-profiterole-8d41cd.netlify.app/",
     imgUrl: cihImg,
   },
   {
-    num: "03",
-    title: "EnviroSense IoT",
-    subtitle: "Smart Industrial Hub",
-    desc: "An end-to-end IoT environment monitoring system designed for industrial smart spaces. Integrates ESP32 microcontrollers, DHT22 sensors, and gas detectors with a real-time dashboard displaying environmental vitals and anomaly alerts.",
-    tech: ["C++ (Arduino)", "ESP32", "MQTT Protocol", "Node.js", "InfluxDB"],
-    github: "https://github.com/Kunalpanche/EnviroSense-IoT",
+    num: "04",
+    title: "IoT Automation Suite",
+    subtitle: "Arduino IoT & Home Automation",
+    desc: "A collection of smart, automated IoT systems developed during an internship at IoTronics Tech Lab. Features Bluetooth-controlled door locks and curtains, keypad lock matrices, and voice-controlled lighting systems to construct custom home automation ecosystems.",
+    features: [
+      "Bluetooth-Controlled Curtain Opener",
+      "Voice-Controlled Home Automation LED",
+      "Keypad-Secured Digital Door Lock",
+      "Smart Calculator on 4x4 Keyboard Matrix",
+      "Expression Display on 8x8 LED Grid",
+      "Custom Bluetooth LED Matrix Display"
+    ],
+    tech: ["Arduino", "C++", "HC-05 Bluetooth", "Keypad Matrix", "Relay Modules"],
+    github: "https://github.com/Kunalpanche/IOT-PROJECTS",
     live: "",
     imgUrl: iotImg,
   },
   {
-    num: "04",
+    num: "05",
     title: "Webspark Platform",
     subtitle: "Learning Management System",
     desc: "An interactive learning management system used to train and mentor over 160+ students. Includes progress trackers, project submission gates, live code playground, and automated feedback loops for assignments.",
@@ -63,11 +95,29 @@ const projectsData = [
     github: "https://github.com/Kunalpanche/Webspark-LMS",
     live: "https://webspark.traillx.com",
     imgUrl: websparkImg,
+  },
+  {
+    num: "06",
+    title: "AR Menu",
+    subtitle: "AR Restaurant Dining Menu",
+    desc: "An interactive Augmented Reality menu platform that modernizes restaurant dining. Customers scan a QR code to view and interact with highly detailed 3D food items right on their tables before ordering.",
+    features: [
+      "Interactive 3D AR Dish Visualization",
+      "Digital QR-Based Menu Access",
+      "Real-time Food Item Customization",
+      "Nutritional & Ingredient Information Display",
+      "Optimized Mobile Browser Rendering"
+    ],
+    tech: ["React.js", "React Native", "Three.js", "Ar.js", "Tailwind CSS"],
+    github: "",
+    live: "https://ar-menu-production.vercel.app/",
+    imgUrl: arMenuImg,
   }
 ];
 
 export function Projects() {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+  const [selectedImg, setSelectedImg] = useState<string | null>(null);
 
   const toggleExpand = (index: number) => {
     setExpandedIndex(expandedIndex === index ? null : index);
@@ -127,10 +177,10 @@ export function Projects() {
                   </div>
 
                   {/* Tech Tags on Desktop (hidden on mobile) */}
-                  <div className="hidden lg:grid grid-cols-2 gap-x-8 gap-y-1 text-xs text-gray-500 font-mono tracking-wider min-w-[250px]">
+                  <div className="hidden lg:grid grid-cols-2 gap-x-8 gap-y-1.5 text-sm text-primary/80 font-mono tracking-wider min-w-[250px]">
                     {project.tech.slice(0, 4).map(t => (
                       <div key={t} className="flex items-center gap-1.5">
-                        <span className="text-primary/60">→</span>
+                        <span className="text-primary font-bold">→</span>
                         <span>{t.toUpperCase()}</span>
                       </div>
                     ))}
@@ -169,20 +219,38 @@ export function Projects() {
                             <h4 className="text-xs uppercase tracking-[0.2em] text-primary/60 font-mono mb-4">
                               {project.subtitle}
                             </h4>
-                            <p className="text-gray-400 text-sm sm:text-base md:text-lg leading-relaxed font-light mb-8 max-w-xl">
+                            <p className="text-gray-200 text-base md:text-lg leading-relaxed font-normal mb-6 max-w-xl">
                               {project.desc}
                             </p>
 
-                            {/* Tech tags on Mobile */}
-                            <div className="flex flex-wrap gap-2 mb-8 lg:hidden">
-                              {project.tech.map(t => (
-                                <span 
-                                  key={t} 
-                                  className="text-[10px] sm:text-xs font-mono bg-white/5 border border-white/10 px-3 py-1 rounded-full text-gray-300"
-                                >
-                                  {t}
-                                </span>
-                              ))}
+                            {/* Features list */}
+                            {project.features && (
+                              <div className="mb-8">
+                                <h5 className="text-sm sm:text-base uppercase tracking-[0.15em] text-[#E1E0CC] font-mono mb-4">Key Features:</h5>
+                                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-base text-gray-300">
+                                  {project.features.map(f => (
+                                    <li key={f} className="flex items-start gap-2">
+                                      <span className="text-primary/70 mt-1">•</span>
+                                      <span>{f}</span>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            )}
+
+                            {/* Tech stack tags - visible on all screens in expanded area */}
+                            <div className="mb-8">
+                              <h5 className="text-sm sm:text-base uppercase tracking-[0.15em] text-[#E1E0CC] font-mono mb-4">Technologies Used:</h5>
+                              <div className="flex flex-wrap gap-2.5">
+                                {project.tech.map(t => (
+                                  <span 
+                                    key={t} 
+                                    className="text-xs sm:text-sm font-mono bg-primary/10 border border-primary/20 px-4 py-1.5 rounded-full text-primary font-medium tracking-wide"
+                                  >
+                                    {t}
+                                  </span>
+                                ))}
+                              </div>
                             </div>
                           </div>
 
@@ -219,12 +287,13 @@ export function Projects() {
                             initial={{ scale: 0.95, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
                             transition={{ delay: 0.1, duration: 0.4 }}
-                            className="relative aspect-video w-full overflow-hidden rounded-xl border border-white/10 bg-[#0a0a0a]"
+                            onClick={() => setSelectedImg(project.imgUrl)}
+                            className="relative aspect-video w-full overflow-hidden rounded-xl border border-white/10 bg-[#0a0a0a] cursor-zoom-in"
                           >
                             <img
                               src={project.imgUrl}
                               alt={project.title}
-                              className="w-full h-full object-cover opacity-80 hover:opacity-100 hover:scale-[1.03] transition-all duration-700"
+                              className="w-full h-full object-cover opacity-100 block"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/45 to-transparent pointer-events-none" />
                           </motion.div>
@@ -239,6 +308,44 @@ export function Projects() {
         </div>
 
       </div>
+
+      <AnimatePresence>
+        {selectedImg && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedImg(null)}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 p-4 md:p-8 backdrop-blur-md cursor-zoom-out"
+          >
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+              onClick={(e) => e.stopPropagation()}
+              className="relative max-w-5xl max-h-[90vh] overflow-hidden rounded-sm border border-white/10 bg-[#080808] text-primary shadow-2xl"
+            >
+              <button
+                type="button"
+                aria-label="Close image details"
+                onClick={() => setSelectedImg(null)}
+                className="absolute right-4 top-4 z-20 flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-black/55 text-primary backdrop-blur-sm transition-colors hover:bg-primary hover:text-black cursor-pointer"
+              >
+                <X size={18} />
+              </button>
+
+              <div className="bg-black flex items-center justify-center">
+                <img
+                  src={selectedImg}
+                  alt="Project Detail Showcase"
+                  className="max-w-full max-h-[85vh] object-contain block"
+                />
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
