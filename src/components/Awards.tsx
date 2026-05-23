@@ -19,7 +19,7 @@ const awardsData = [
     desc: "Tech Connect (YTC) Inter-collegiate Hackathon facilitated by Mr. Daya Nanda Shetty and Hon. Faggan Singh Kulaste",
     date: "2024-02-25",
     imgUrl:
-      "https://media.licdn.com/dms/image/v2/D5622AQFcNdnz3OBfFA/feedshare-shrink_1280/feedshare-shrink_1280/0/1709875725810?e=1779321600&v=beta&t=s6O4l_o5R18m9ZHd_yiAgqQvbSIJf7FrxXG7HQP-Bro",
+      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/ytcdaya.jpg",
   },
   {
     id: 2,
@@ -55,7 +55,7 @@ const awardsData = [
     desc: "Secured 2nd place at Startup Expo held at Pallotti College of Engineering and Technology, Nagpur by presenting innovative startup ideas and pitching to 30+ industry leaders and investors",
     date: "2024-10-19",
     imgUrl:
-      "https://media.licdn.com/dms/image/v2/D5622AQE4TaQSSLkW8A/feedshare-shrink_1280/feedshare-shrink_1280/0/1729400114449?e=1779321600&v=beta&t=lQtLQdJjzsN-1eIWLmVRUlTWNnIz5IGZP_GHCwzS4Bw",
+      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/startupexpopalloti.jpg",
   },
   {
     id: 6,
@@ -64,7 +64,7 @@ const awardsData = [
     desc: "Won 1st place at a 24-hour hackathon hosted by Government Polytechnic Nagpur, securing a cash prize of ₹15,000 for delivering an impactful solution under time constraints",
     date: "2024-10-25",
     imgUrl:
-      "https://media.licdn.com/dms/image/v2/D5622AQHBz-QGXxuTQg/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1730047911382?e=1779321600&v=beta&t=e6gL5lXBr9R1APhSMYDXzTshL-mBm86aU7zw569sMnc",
+      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/govpoly.jpg",
   },
   {
     id: 7,
@@ -73,7 +73,7 @@ const awardsData = [
     desc: "Secured 1st place at Technex Hackathon hosted by St. Vincent Pallotti College of Engineering & Technology among 120+ teams, winning ₹35,000 for building an innovative solution in a 24-hour challenge",
     date: "2025-01-21",
     imgUrl:
-      "https://media.licdn.com/dms/image/v2/D5622AQF0mp__orDXVQ/feedshare-shrink_2048_1536/B56ZSeFViCGUAo-/0/1737819000307?e=1779321600&v=beta&t=9_sr3fwtFb9cP8DuCkOt-f0W2XlqcYKyg4n-wRwrNCU",
+      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/technex.jpg",
   },
   {
     id: 8,
@@ -82,7 +82,7 @@ const awardsData = [
     desc: "Led and organized Central India Hackathon 2025, initiating hackathon culture at the college and managing a Pan-India event with 75+ teams and 300+ participants",
     date: "2025-02-07",
     imgUrl:
-      "https://media.licdn.com/dms/image/v2/D5622AQHy55hiLqPW2w/feedshare-shrink_1280/B56ZUpGF4NHEAk-/0/1740151228446?e=1779321600&v=beta&t=ROA--9FDKJaq46goyaBNushDGuCTfoTsJttVjoRM8-4",
+      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/cih1.jpg",
   },
   {
     id: 9,
@@ -91,7 +91,7 @@ const awardsData = [
     desc: "Secured 2nd Runner-Up position at CodeHunt 24-hour hackathon, marking the 4th consecutive win through consistent performance and problem-solving under pressure",
     date: "2025-02-16",
     imgUrl:
-      "https://media.licdn.com/dms/image/v2/D4D22AQEW61vWT8TO0g/feedshare-shrink_2048_1536/B4DZU4WFUHHkAo-/0/1740407072006?e=1779321600&v=beta&t=QcnuSmQnZ_vQqi7dWVZ3z5to8H9z8v70PhWKUPXKm3A",
+      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/codehunt.jpg",
   },
   {
     id: 10,
@@ -100,7 +100,7 @@ const awardsData = [
     desc: "Secured 1st place at SITNovate 24-hour hackathon hosted by Symbiosis Institute of Technology, outperforming 700+ teams through multi-stage evaluation including ideation, development, and final pitching rounds",
     date: "2025-02-20",
     imgUrl:
-      "https://media.licdn.com/dms/image/v2/D5622AQGXYk9Btc0DGw/feedshare-shrink_1280/B56ZVA5VvwHQAk-/0/1740550533815?e=1779321600&v=beta&t=rjVpDj_nfJvNcjTqaJ8cNC4CWWR2PaRnYYHYEGfyWfw",
+      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/sitnovate.jpg",
   },
   {
     id: 11,
@@ -109,7 +109,7 @@ const awardsData = [
     desc: "Secured 1st place at HackWhack 2.0, marking the 6th consecutive hackathon victory and 9th overall win through continuous innovation and problem-solving excellence",
     date: "2025-02-24",
     imgUrl:
-      "https://media.licdn.com/dms/image/v2/D4D22AQFPsECySbimhg/feedshare-shrink_2048_1536/B4DZXIqfIOH4Ao-/0/1742828341084?e=1779321600&v=beta&t=3cHAsMIOPUmyEyL2mk6oQIwBH2Ycx_k9yp71ko9-0Tc",
+      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/hackwhack.jpg",
   },
   {
     id: 12,
@@ -127,7 +127,7 @@ const awardsData = [
     desc: "Successfully conducted an AI Agent & Automation workshop at Suryodaya College of Engineering & Technology, impacting 40+ learners and delivering hands-on learning experience",
     date: "2025-06-15",
     imgUrl:
-      "https://media.licdn.com/dms/image/v2/D5622AQGU3dxGikEEjA/feedshare-shrink_2048_1536/B56ZeGGEJwGoAs-/0/1750301428521?e=1779321600&v=beta&t=yQve_OcCS5NYoipXUcb18wY7uSm_wj_MHKAX8piIOes",
+      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/aiworkshop.jpg",
   },
   {
     id: 14,
@@ -145,7 +145,7 @@ const awardsData = [
     desc: "Successfully completed and led the Webspark training program under Traillx, mentoring 160+ students over 2 months in full-stack development, hackathons, and real-world project building",
     date: "2025-09-08",
     imgUrl:
-      "https://media.licdn.com/dms/image/v2/D5622AQFMMPzL-2MJVg/feedshare-shrink_1280/B56ZkoDEVDG4As-/0/1757313518038?e=1779321600&v=beta&t=fo-aV7vX7AKdlgBYRFn0xcotkxXEd96KLg2AjSdhYL0",
+      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/webspark1.jpg",
   },
   {
     id: 16,
@@ -154,7 +154,7 @@ const awardsData = [
     desc: "Invited as a judge at Genathon 3.0 hosted by IIIT Nagpur, evaluating 23 teams on innovation, scalability, and problem-solving while identifying top-performing solutions",
     date: "2025-10-11",
     imgUrl:
-      "https://media.licdn.com/dms/image/v2/D5622AQGJuV03E6Wv-g/feedshare-shrink_1280/B56Zng2UvYG4As-/0/1760413962437?e=1779321600&v=beta&t=Ri2r23-37ZFozxm0JBVz8wrak6fTzUENVlkF9fT97dE",
+      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/genathon.jpg",
   },
   {
     id: 17,
@@ -163,7 +163,7 @@ const awardsData = [
     desc: "Mentored 20+ teams for Smart India Hackathon 2025 as Technical Head, guiding problem selection, solution design, and execution, with one team qualifying for the national hardware finals",
     date: "2025-12-02",
     imgUrl:
-      "https://media.licdn.com/dms/image/v2/D5622AQFBEL9SBvJZ5g/feedshare-shrink_2048_1536/B56ZtBBiN0JoAw-/0/1766322481065?e=1779321600&v=beta&t=Huwy1x-m45ySAwZL4tuI5wahOiiKW3X-jvZSppbMb9M",
+      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/sihmentor.jpg",
   },
   {
     id: 18,
@@ -172,7 +172,7 @@ const awardsData = [
     desc: "Co-led Central India Hackathon 3.0, achieving India Book of Records recognition for maximum participation in an offline SDG-focused hackathon and driving large-scale impact innovation",
     date: "2026-01-30",
     imgUrl:
-      "https://media.licdn.com/dms/image/v2/D5622AQEvMXMEk5G15A/feedshare-shrink_2048_1536/B56ZxfnglEIIAs-/0/1771130718988?e=1779321600&v=beta&t=ELfDHfyluQuYCbyml7XY-wJmBdIXzyOc-vWnATevPfw",
+      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/cih3.jpg",
   },
   {
     id: 19,
@@ -181,7 +181,7 @@ const awardsData = [
     desc: "Secured Top 10 position at India AI Impact Summit 2026 Buildathon among 15,000+ teams, presenting a real-time AI voice fraud detection system at the national grand finale",
     date: "2026-02-16",
     imgUrl:
-      "https://media.licdn.com/dms/image/v2/D5622AQGhnSdPb_KOwA/feedshare-shrink_1280/B56ZyAczlUJUAc-/0/1771681561517?e=1779321600&v=beta&t=VLXpPBFKtjdfAiYPo-1SMdCXwKgPTb21M-wJMhrTku4",
+      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/aiimpact.jpg",
   },
   {
     id: 20,
@@ -190,7 +190,7 @@ const awardsData = [
     desc: "Mentored 14 teams at AM Hacks 2.0 on the same day as being a Top 10 finalist at a national AI summit, guiding teams on idea validation, MVP refinement, and problem-solving under time constraints",
     date: "2026-02-16",
     imgUrl:
-      "https://media.licdn.com/dms/image/v2/D5622AQHsTSRBXMRNiw/feedshare-shrink_2048_1536/B56ZydZMtFJMAk-/0/1772167154800?e=1779321600&v=beta&t=I7pYd716PiDX2kMKjs_geYB8sc0H4yjRBxb9Y2tsz4k",
+      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/amhack.jpg",
   },
   {
     id: 21,
@@ -199,7 +199,7 @@ const awardsData = [
     desc: "Invited as a judge at HackOn 2.0 by GDG GCOEN, evaluating 20 teams on innovation, execution, and technical understanding while identifying top-performing solutions",
     date: "2026-03-10",
     imgUrl:
-      "https://media.licdn.com/dms/image/v2/D5622AQGaLtIq6KPn4Q/feedshare-shrink_2048_1536/B56Z0EwSnVHoAg-/0/1773901262207?e=1779321600&v=beta&t=Hv9GJdPTP5ShyH7nSKL3S9SUkDSORew2AxCTa7XNxOg",
+      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/hackon.jpg",
   },
   {
     id: 23,
