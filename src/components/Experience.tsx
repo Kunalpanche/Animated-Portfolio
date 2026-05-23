@@ -21,7 +21,7 @@ const experienceData = [
   {
     id: 2,
     num: "02",
-    role: "Co-Founder",
+    role: "Founding Engineer",
     company: "TraillX",
     date: "Feb 2025 - Present (1 yr 3 mos)",
     location: "Nagpur, MH, India",

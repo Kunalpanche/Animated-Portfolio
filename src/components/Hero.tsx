@@ -74,7 +74,7 @@ export function Hero() {
               </motion.p>
 
               <motion.a
-                href="#contact"
+                href="mailto:kunalpanche34@gmail.com"
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.7, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}

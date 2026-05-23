@@ -16,8 +16,7 @@ const skillsData = [
     skills: [
       { name: 'C++ (DSA)', iconUrl: getDevicon('cplusplus') },
       { name: 'JavaScript', iconUrl: getDevicon('javascript') },
-      { name: 'Python', iconUrl: getDevicon('python') },
-      { name: 'TypeScript', iconUrl: getDevicon('typescript') }
+      { name: 'Python', iconUrl: getDevicon('python') }
     ]
   },
   {

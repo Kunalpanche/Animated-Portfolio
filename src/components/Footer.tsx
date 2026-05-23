@@ -23,16 +23,7 @@ export function Footer() {
         </div>
         <div className="py-6 sm:py-10 border-b border-white/10 relative">
           <WordsPullUpMultiStyle segments={line3} />
-          
-          {/* Plus Button */}
-          <motion.div 
-            initial={{ scale: 0, opacity: 0 }}
-            animate={isInView ? { scale: 1, opacity: 1 } : { scale: 0, opacity: 0 }}
-            transition={{ delay: 0.8, duration: 0.4 }}
-            className="absolute left-1/2 -bottom-5 -translate-x-1/2 w-10 h-10 bg-primary rounded-full flex items-center justify-center text-black text-xl hover:scale-110 transition-transform cursor-pointer shadow-lg shadow-black/50 z-10"
-          >
-            +
-          </motion.div>
+        
         </div>
       </div>
 

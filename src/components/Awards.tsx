@@ -207,7 +207,17 @@ const awardsData = [
     title: "Student of the Year",
     desc: "Awarded Student of the Year in recognition of outstanding academic performance, leadership, and contributions to technical and extracurricular activities",
     date: "2026-02-23",
-    imgUrl: "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/soty.png",
+    imgUrl:
+      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/soty.png",
+  },
+  {
+    id: 24,
+    num: "24",
+    title: "Ultimate GenAI Bootcamp",
+    desc: "Conducted a 2-day hands-on Ultimate GenAI Bootcamp with 100+ students, covering AI fundamentals, prompt engineering, local models, AI automations, and guiding them to build real AI workflows.",
+    date: "2026-05-18",
+    imgUrl:
+      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/aibootcamp.png",
   },
 ] satisfies Award[];
 
@@ -308,7 +318,9 @@ export function Awards() {
                   openAwardModal(award);
                 }
               }}
-              initial={isMobileCarousel ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              initial={
+                isMobileCarousel ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }
+              }
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={
@@ -441,7 +453,6 @@ export function Awards() {
           </motion.div>
         )}
       </AnimatePresence>
-
     </section>
   );
 }
