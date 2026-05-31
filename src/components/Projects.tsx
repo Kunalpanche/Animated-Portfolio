@@ -18,7 +18,6 @@ const GithubIcon = (props: React.SVGProps<SVGSVGElement>) => (
 );
 
 import cihImg from '../assets/project/cih.png';
-import websparkImg from '../assets/webspark1.jpg';
 import ayurSetuImg from '../assets/project/Ayursetu.png';
 import iotImg from '../assets/project/iot.png';
 import arMenuImg from '../assets/project/armenu.png';
@@ -140,16 +139,6 @@ const projectsData = [
   },
   {
     num: "07",
-    title: "Webspark Platform",
-    subtitle: "Learning Management System",
-    desc: "An interactive learning management system used to train and mentor over 160+ students. Includes progress trackers, project submission gates, live code playground, and automated feedback loops for assignments.",
-    tech: ["React.js", "Node.js", "Firebase Auth", "Tailwind CSS", "Express"],
-    github: "https://github.com/Kunalpanche/Webspark-LMS",
-    live: "https://webspark.traillx.com",
-    imgUrl: websparkImg,
-  },
-  {
-    num: "08",
     title: "AR Menu",
     subtitle: "AR Restaurant Dining Menu",
     desc: "An interactive Augmented Reality menu platform that modernizes restaurant dining. Customers scan a QR code to view and interact with highly detailed 3D food items right on their tables before ordering.",
@@ -166,7 +155,7 @@ const projectsData = [
     imgUrl: arMenuImg,
   },
   {
-    num: "09",
+    num: "08",
     title: "Crop Recommendation System",
     subtitle: "Machine Learning Crop Advisor",
     desc: "A machine learning-based system designed to recommend suitable crops based on environmental conditions. The system utilizes various algorithms to analyze factors like soil type, climate, and other parameters to suggest the best crops for optimal yield.",
@@ -181,7 +170,7 @@ const projectsData = [
     imgUrl: cropImg,
   },
   {
-    num: "10",
+    num: "09",
     title: "SMS Spam Detection",
     subtitle: "Machine Learning Spam Classifier",
     desc: "A machine learning model that takes an SMS as input and predicts whether the message is a spam or not spam message. The model is built using Python and deployed on the web using Streamlit.",
@@ -197,7 +186,7 @@ const projectsData = [
     imgUrl: smsSpamImg,
   },
   {
-    num: "11",
+    num: "10",
     title: "OCR Text Extraction App",
     subtitle: "Python & Streamlit OCR Application",
     desc: "A simple OCR-based web app built using Python and Streamlit that extracts text from images using Tesseract OCR.",
@@ -212,7 +201,7 @@ const projectsData = [
     live: "",
   },
   {
-    num: "12",
+    num: "11",
     title: "Sharing Plates",
     subtitle: "Community Food Redistribution Platform",
     desc: "A community-driven platform to combat food waste by connecting individuals and organizations with surplus food to NGOs and those in need. Transforms leftover food into an opportunity to help others while reducing environmental waste.",

@@ -5,7 +5,14 @@ import { WordsPullUp } from './WordsPullUp';
 const bgVideo = 'https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/bgg.mp4';
 
 export function Hero() {
-  const navItems = ["About", "Experience", "Projects", "Skills", "Contact"];
+  const navItems = [
+    { name: "About", href: "#about" },
+    { name: "Experience", href: "#experience" },
+    { name: "Projects", href: "#projects" },
+    { name: "Skills", href: "#skills" },
+    { name: "Achievements", href: "#awards" },
+    { name: "Contact", href: "#contact" }
+  ];
 
   return (
     <section className="h-screen w-full p-4 md:p-6 bg-black relative">
@@ -32,14 +39,14 @@ export function Hero() {
           <nav className="bg-black rounded-b-2xl md:rounded-b-3xl px-5 py-2.5 md:px-9 flex items-center gap-4 sm:gap-7 md:gap-12 lg:gap-16">
             {navItems.map((item) => (
               <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
+                key={item.name}
+                href={item.href}
                 className="text-xs sm:text-sm md:text-[15px] whitespace-nowrap transition-colors duration-300"
                 style={{ color: 'rgba(225, 224, 204, 0.8)' }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = '#E1E0CC')}
                 onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(225, 224, 204, 0.8)')}
               >
-                {item}
+                {item.name}
               </a>
             ))}
           </nav>
