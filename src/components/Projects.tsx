@@ -17,13 +17,7 @@ const GithubIcon = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
-import cihImg from '../assets/project/cih.png';
-import ayurSetuImg from '../assets/project/Ayursetu.png';
-import iotImg from '../assets/project/iot.png';
-import arMenuImg from '../assets/project/armenu.png';
-import cropImg from '../assets/project/crop.png';
-import smsSpamImg from '../assets/project/smsspam.png';
-import vajraImg from '../assets/project/vajra.jpeg';
+
 
 const projectsData = [
   {
@@ -48,7 +42,7 @@ const projectsData = [
       "LLM"
     ],
     github: "https://github.com/Kunalpanche/Ayursetu-Frontend.git",
-    imgUrl: ayurSetuImg,
+    imgUrl: "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/project/Ayursetu.png",
   },
   {
     num: "02",
@@ -100,7 +94,7 @@ const projectsData = [
     tech: ["Next.js", "Tailwind CSS", "MongoDB", "Express.js", "Socket.io"],
     github: "",
     live: "https://phenomenal-profiterole-8d41cd.netlify.app/",
-    imgUrl: cihImg,
+    imgUrl: "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/project/cih.png",
   },
   {
     num: "05",
@@ -117,7 +111,7 @@ const projectsData = [
     tech: ["IoT", "ESP32", "RFID", "4G Module", "C++"],
     github: "https://github.com/Kunalpanche/Vajra.git",
     live: "",
-    imgUrl: vajraImg,
+    imgUrl: "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/project/vajra.jpeg",
   },
   {
     num: "06",
@@ -135,7 +129,7 @@ const projectsData = [
     tech: ["Arduino", "C++", "HC-05 Bluetooth", "Keypad Matrix", "Relay Modules"],
     github: "https://github.com/Kunalpanche/IOT-PROJECTS",
     live: "",
-    imgUrl: iotImg,
+    imgUrl: "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/project/iot.png",
   },
   {
     num: "07",
@@ -152,7 +146,7 @@ const projectsData = [
     tech: ["React.js", "React Native", "Three.js", "Ar.js", "Tailwind CSS"],
     github: "",
     live: "https://ar-menu-production.vercel.app/",
-    imgUrl: arMenuImg,
+    imgUrl: "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/project/armenu.png",
   },
   {
     num: "08",
@@ -167,7 +161,7 @@ const projectsData = [
     tech: ["Python", "Scikit-Learn", "Pandas", "NumPy"],
     github: "https://github.com/Kunalpanche/Crop-Recommendation-System.git",
     live: "https://crop-recommendation-system-tcwa.onrender.com/",
-    imgUrl: cropImg,
+    imgUrl: "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/project/crop.png",
   },
   {
     num: "09",
@@ -183,7 +177,7 @@ const projectsData = [
     tech: ["Python", "Scikit-Learn", "Pandas", "NumPy", "Streamlit"],
     github: "",
     live: "https://smspamdetect.streamlit.app/",
-    imgUrl: smsSpamImg,
+    imgUrl: "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/project/smsspam.png",
   },
   {
     num: "10",
