@@ -7,9 +7,23 @@ const experienceData = [
   {
     id: 1,
     num: "01",
+    role: "Technical Incubation Manager",
+    company: "Suryodaya Technology Business Incubator Foundation",
+    date: "Jun 2026 - Present",
+    location: "Nagpur, MH, India",
+    desc: [
+      "Fostering innovation and early-stage startup growth by managing technical incubation programs.",
+      "Providing specialized mentorship in product architecture, tech stack selection, and engineering best practices.",
+      "Facilitating technology integration and rapid prototyping pipelines for emerging incubatees.",
+      "Coordinating workshops and driving the overall development of the local entrepreneurial tech ecosystem."
+    ]
+  },
+  {
+    id: 2,
+    num: "02",
     role: "AI Engineer",
     company: "Acube AI",
-    date: "Jan 2026 - Present",
+    date: "Jan 2026 - May 2026 (5 MOS)",
     location: "Nagpur",
     desc: [
       "Driving mission-critical AI engineering initiatives, models, and real-world optimizations.",
@@ -19,8 +33,8 @@ const experienceData = [
     ]
   },
   {
-    id: 2,
-    num: "02",
+    id: 3,
+    num: "03",
     role: "Founding Engineer",
     company: "TraillX",
     date: "Feb 2025 - Present (1 yr 3 mos)",
@@ -33,8 +47,8 @@ const experienceData = [
     ]
   },
   {
-    id: 3,
-    num: "03",
+    id: 4,
+    num: "04",
     role: "Lead Organizer",
     company: "Central India Hackathon",
     date: "Dec 2024 - Present (1 yr 5 mos)",
@@ -47,8 +61,8 @@ const experienceData = [
     ]
   },
   {
-    id: 4,
-    num: "04",
+    id: 5,
+    num: "05",
     role: "Mentor",
     company: "Smart India Hackathon",
     date: "Aug 2025 - Dec 2025 (5 mos)",
@@ -61,8 +75,8 @@ const experienceData = [
     ]
   },
   {
-    id: 5,
-    num: "05",
+    id: 6,
+    num: "06",
     role: "Full Stack Developer",
     company: "EY",
     date: "Dec 2024 - Jan 2025 (2 mos)",
@@ -75,8 +89,8 @@ const experienceData = [
     ]
   },
   {
-    id: 6,
-    num: "06",
+    id: 7,
+    num: "07",
     role: "Ai and Cloud Intern",
     company: "Edunet Foundation",
     date: "Jul 2024 - Aug 2024 (2 mos)",
@@ -89,8 +103,8 @@ const experienceData = [
     ]
   },
   {
-    id: 7,
-    num: "07",
+    id: 8,
+    num: "08",
     role: "Data Analyst Intern",
     company: "DYSMECH COMPETENCY SERVICES",
     date: "Jan 2024 - Apr 2024 (4 mos)",
@@ -103,8 +117,8 @@ const experienceData = [
     ]
   },
   {
-    id: 8,
-    num: "08",
+    id: 9,
+    num: "09",
     role: "IoT Intern",
     company: "IoTronics Tech Lab Pvt. Ltd.",
     date: "Oct 2023 - Dec 2023 (3 mos)",
