@@ -194,6 +194,8 @@ export function Skills() {
                      <img 
                        src={skill.iconUrl} 
                        alt={skill.name} 
+                       loading="lazy"
+                       decoding="async"
                        className="w-full h-full object-contain group-hover:scale-125 transition-transform duration-500 opacity-90 group-hover:opacity-100" 
                      />
                   </div>

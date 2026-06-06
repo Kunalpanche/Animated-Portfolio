@@ -397,6 +397,8 @@ export function Projects({ limit }: ProjectsProps = {}) {
                               <img
                                 src={project.imgUrl}
                                 alt={project.title}
+                                loading="lazy"
+                                decoding="async"
                                 className="w-full h-full object-cover opacity-100 block"
                               />
                               <div className="absolute inset-0 bg-gradient-to-t from-black/45 to-transparent pointer-events-none" />
@@ -459,6 +461,8 @@ export function Projects({ limit }: ProjectsProps = {}) {
                 <img
                   src={selectedImg}
                   alt="Project Detail Showcase"
+                  loading="lazy"
+                  decoding="async"
                   className="max-w-full max-h-[85vh] object-contain block"
                 />
               </div>

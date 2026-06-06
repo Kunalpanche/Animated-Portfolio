@@ -27,6 +27,7 @@ export function Hero() {
           loop
           muted
           playsInline
+          preload="auto"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.25, ease: [0.16, 1, 0.3, 1] }}
@@ -163,7 +164,7 @@ export function Hero() {
                 transition={{ delay: 0.5, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                 className="text-primary/90 text-xs sm:text-sm md:text-base leading-snug max-w-sm"
               >
-                Final-year Computer Engineering student skilled in Python, Data Analysis, and Full Stack Development. Passionate about problem-solving and a 10x National Hackathon Winner.
+                Computer Engineering graduate skilled in Python, Data Analysis, and Full Stack Development. Passionate about problem-solving and a 10x National Hackathon Winner.
               </motion.p>
 
               <motion.a

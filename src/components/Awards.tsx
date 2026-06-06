@@ -342,6 +342,8 @@ export function Awards() {
                 <img
                   src={award.imgUrl}
                   alt={award.title}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-auto block transition-transform duration-1000 opacity-100 md:opacity-80 md:group-hover:scale-[1.05] md:group-hover:opacity-100"
                 />
 
@@ -427,6 +429,8 @@ export function Awards() {
                 <img
                   src={selectedAward.imgUrl}
                   alt={selectedAward.title}
+                  loading="lazy"
+                  decoding="async"
                   className="h-full w-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-black/15" />
