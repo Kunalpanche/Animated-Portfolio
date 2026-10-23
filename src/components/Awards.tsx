@@ -19,7 +19,7 @@ const awardsData = [
     desc: "Tech Connect (YTC) Inter-collegiate Hackathon facilitated by Mr. Daya Nanda Shetty and Hon. Faggan Singh Kulaste",
     date: "2024-02-25",
     imgUrl:
-      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/ytcdaya.jpg",
+      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/awards/ytcdaya.jpg",
   },
   {
     id: 2,
@@ -28,7 +28,7 @@ const awardsData = [
     desc: "Won ideathon with team members Khushi Rokade, Siddharth Parihar, and Hitesh Mankar through an innovative solution",
     date: "2024-03-09",
     imgUrl:
-      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/kdk.jpeg",
+      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/awards/kdk.jpeg",
   },
   {
     id: 3,
@@ -37,7 +37,7 @@ const awardsData = [
     desc: "Hackbitz 8-hour hackathon at Jhulelal Institute of Technology with team members Siddharth Parihar and Hitesh Mankar",
     date: "2024-03-15",
     imgUrl:
-      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/jit.jpeg",
+      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/awards/jit.jpeg",
   },
   {
     id: 4,
@@ -46,7 +46,7 @@ const awardsData = [
     desc: "Secured 1st place at Techathon hosted by GH Raisoni College of Engineering by developing an innovative solution to a complex real-world problem",
     date: "2024-03-30",
     imgUrl:
-      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/ghrce.jpeg",
+      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/awards/ghrce.jpeg",
   },
   {
     id: 5,
@@ -55,7 +55,7 @@ const awardsData = [
     desc: "Secured 2nd place at Startup Expo held at Pallotti College of Engineering and Technology, Nagpur by presenting innovative startup ideas and pitching to 30+ industry leaders and investors",
     date: "2024-10-19",
     imgUrl:
-      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/startupexpopalloti.jpg",
+      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/awards/startupexpopalloti.jpg",
   },
   {
     id: 6,
@@ -64,7 +64,7 @@ const awardsData = [
     desc: "Won 1st place at a 24-hour hackathon hosted by Government Polytechnic Nagpur, securing a cash prize of ₹15,000 for delivering an impactful solution under time constraints",
     date: "2024-10-25",
     imgUrl:
-      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/govpoly.jpg",
+      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/awards/govpoly.jpg",
   },
   {
     id: 7,
@@ -73,7 +73,7 @@ const awardsData = [
     desc: "Secured 1st place at Technex Hackathon hosted by St. Vincent Pallotti College of Engineering & Technology among 120+ teams, winning ₹35,000 for building an innovative solution in a 24-hour challenge",
     date: "2025-01-21",
     imgUrl:
-      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/technex.jpg",
+      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/awards/technex.jpg",
   },
   {
     id: 8,
@@ -82,7 +82,7 @@ const awardsData = [
     desc: "Led and organized Central India Hackathon 2025, initiating hackathon culture at the college and managing a Pan-India event with 75+ teams and 300+ participants",
     date: "2025-02-07",
     imgUrl:
-      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/cih1.jpg",
+      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/awards/cih1.jpg",
   },
   {
     id: 9,
@@ -91,7 +91,7 @@ const awardsData = [
     desc: "Secured 2nd Runner-Up position at CodeHunt 24-hour hackathon, marking the 4th consecutive win through consistent performance and problem-solving under pressure",
     date: "2025-02-16",
     imgUrl:
-      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/codehunt.jpg",
+      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/awards/codehunt.jpg",
   },
   {
     id: 10,
@@ -100,7 +100,7 @@ const awardsData = [
     desc: "Secured 1st place at SITNovate 24-hour hackathon hosted by Symbiosis Institute of Technology, outperforming 700+ teams through multi-stage evaluation including ideation, development, and final pitching rounds",
     date: "2025-02-20",
     imgUrl:
-      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/sitnovate.jpg",
+      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/awards/sitnovate.jpg",
   },
   {
     id: 11,
@@ -109,7 +109,7 @@ const awardsData = [
     desc: "Secured 1st place at HackWhack 2.0, marking the 6th consecutive hackathon victory and 9th overall win through continuous innovation and problem-solving excellence",
     date: "2025-02-24",
     imgUrl:
-      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/hackwhack.jpg",
+      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/awards/hackwhack.jpg",
   },
   {
     id: 12,
@@ -118,7 +118,7 @@ const awardsData = [
     desc: "Achieved 1st Runner-Up position in a 12-hour hackathon, marking the 10th overall hackathon victory and extending a strong streak of consistent high-performance innovation",
     date: "2025-03-29",
     imgUrl:
-      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/tgpcet.jpeg",
+      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/awards/tgpcet.jpeg",
   },
   {
     id: 13,
@@ -127,7 +127,7 @@ const awardsData = [
     desc: "Successfully conducted an AI Agent & Automation workshop at Suryodaya College of Engineering & Technology, impacting 40+ learners and delivering hands-on learning experience",
     date: "2025-06-15",
     imgUrl:
-      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/aiworkshop.jpg",
+      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/awards/aiworkshop.jpg",
   },
   {
     id: 14,
@@ -136,7 +136,7 @@ const awardsData = [
     desc: "Led and executed Central India Hackathon 2.0, scaling it to one of India’s largest student-led hackathons with 800+ teams and 2000+ developers across 150+ cities",
     date: "2025-06-24",
     imgUrl:
-      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/cih2.jpeg",
+      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/awards/cih2.jpeg",
   },
   {
     id: 15,
@@ -145,7 +145,7 @@ const awardsData = [
     desc: "Successfully completed and led the Webspark training program under Traillx, mentoring 160+ students over 2 months in full-stack development, hackathons, and real-world project building",
     date: "2025-09-08",
     imgUrl:
-      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/webspark1.jpg",
+      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/awards/webspark1.jpg",
   },
   {
     id: 16,
@@ -154,7 +154,7 @@ const awardsData = [
     desc: "Invited as a judge at Genathon 3.0 hosted by IIIT Nagpur, evaluating 23 teams on innovation, scalability, and problem-solving while identifying top-performing solutions",
     date: "2025-10-11",
     imgUrl:
-      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/genathon.jpg",
+      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/awards/genathon.jpg",
   },
   {
     id: 17,
@@ -163,7 +163,7 @@ const awardsData = [
     desc: "Mentored 20+ teams for Smart India Hackathon 2025 as Technical Head, guiding problem selection, solution design, and execution, with one team qualifying for the national hardware finals",
     date: "2025-12-02",
     imgUrl:
-      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/sihmentor.jpg",
+      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/awards/sihmentor.jpg",
   },
   {
     id: 18,
@@ -172,7 +172,7 @@ const awardsData = [
     desc: "Co-led Central India Hackathon 3.0, achieving India Book of Records recognition for maximum participation in an offline SDG-focused hackathon and driving large-scale impact innovation",
     date: "2026-01-30",
     imgUrl:
-      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/cih3.jpg",
+      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/awards/cih3.jpg",
   },
   {
     id: 19,
@@ -181,7 +181,7 @@ const awardsData = [
     desc: "Secured Top 10 position at India AI Impact Summit 2026 Buildathon among 15,000+ teams, presenting a real-time AI voice fraud detection system at the national grand finale",
     date: "2026-02-16",
     imgUrl:
-      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/aiimpact.jpg",
+      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/awards/aiimpact.jpg",
   },
   {
     id: 20,
@@ -190,7 +190,7 @@ const awardsData = [
     desc: "Mentored 14 teams at AM Hacks 2.0 on the same day as being a Top 10 finalist at a national AI summit, guiding teams on idea validation, MVP refinement, and problem-solving under time constraints",
     date: "2026-02-16",
     imgUrl:
-      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/amhack.jpg",
+      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/awards/amhack.jpg",
   },
   {
     id: 21,
@@ -199,7 +199,7 @@ const awardsData = [
     desc: "Invited as a judge at HackOn 2.0 by GDG GCOEN, evaluating 20 teams on innovation, execution, and technical understanding while identifying top-performing solutions",
     date: "2026-03-10",
     imgUrl:
-      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/hackon.jpg",
+      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/awards/hackon.jpg",
   },
   {
     id: 23,
@@ -208,7 +208,7 @@ const awardsData = [
     desc: "Awarded Student of the Year in recognition of outstanding academic performance, leadership, and contributions to technical and extracurricular activities",
     date: "2026-02-23",
     imgUrl:
-      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/soty.png",
+      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/awards/soty.png",
   },
   {
     id: 24,
@@ -217,7 +217,7 @@ const awardsData = [
     desc: "Conducted a 2-day hands-on Ultimate GenAI Bootcamp with 100+ students, covering AI fundamentals, prompt engineering, local models, AI automations, and guiding them to build real AI workflows.",
     date: "2026-05-18",
     imgUrl:
-      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/aibootcamp.png",
+      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/awards/aibootcamp.png",
   },
 ] satisfies Award[];
 
