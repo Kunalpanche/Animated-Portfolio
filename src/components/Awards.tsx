@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
 type Award = {
@@ -308,6 +308,29 @@ export function Awards() {
     return () => mediaQuery.removeEventListener("change", handleChange);
   }, []);
 
+  const [columnCount, setColumnCount] = useState<number>(() => {
+    if (typeof window !== "undefined") {
+      return window.innerWidth >= 1024 ? 4 : 2;
+    }
+    return 4;
+  });
+
+  useEffect(() => {
+    const lgQuery = window.matchMedia("(min-width: 1024px)");
+    const handleLgChange = () => setColumnCount(lgQuery.matches ? 4 : 2);
+    handleLgChange();
+    lgQuery.addEventListener("change", handleLgChange);
+    return () => lgQuery.removeEventListener("change", handleLgChange);
+  }, []);
+
+  const desktopColumns = useMemo(() => {
+    const cols: Award[][] = Array.from({ length: columnCount }, () => []);
+    sortedAwardsData.forEach((award, index) => {
+      cols[index % columnCount].push(award);
+    });
+    return cols;
+  }, [columnCount]);
+
   const openAwardModal = (award: Award) => {
     if (window.matchMedia("(min-width: 768px)").matches) {
       setSelectedAward(award);
@@ -351,104 +374,146 @@ export function Awards() {
         </div>
       </div>
 
-      {/* Masonry on Desktop / Carousel on Mobile */}
-      <div
-        ref={carouselRef}
-        className="max-w-[1600px] mx-auto flex md:block overflow-x-auto md:overflow-visible snap-x snap-mandatory md:snap-none hide-scrollbar gap-6 md:gap-8 md:columns-2 lg:columns-4 md:space-y-8"
-        style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-      >
-        {sortedAwardsData.map((award, idx) => {
-          const formattedDate = formatAwardDate(award.date);
-
-          return (
-            <motion.div
-              key={award.id}
-              role="button"
-              tabIndex={0}
-              onClick={() => openAwardModal(award)}
-              onKeyDown={(event) => {
-                if (event.key === "Enter" || event.key === " ") {
-                  event.preventDefault();
-                  openAwardModal(award);
-                }
-              }}
-              initial={
-                isMobileCarousel ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }
-              }
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={
-                isMobileCarousel
-                  ? { duration: 0 }
-                  : {
-                      duration: 0.7,
-                      delay: (idx % 4) * 0.15,
-                      ease: [0.16, 1, 0.3, 1],
-                    }
-              }
-              className="break-inside-avoid group cursor-pointer shrink-0 snap-center w-[85vw] md:w-full md:mb-8"
-            >
-              {/* Image Box */}
-              <div
-                className="relative w-full overflow-hidden rounded-sm md:grayscale md:group-hover:grayscale-0 transition-all duration-700"
-                style={{ backgroundColor: "#0a0a0a" }}
+      {/* Mobile Carousel — unchanged */}
+      {isMobileCarousel && (
+        <div
+          ref={carouselRef}
+          className="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-6"
+          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+        >
+          {sortedAwardsData.map((award) => {
+            const formattedDate = formatAwardDate(award.date);
+            return (
+              <motion.div
+                key={award.id}
+                initial={{ opacity: 1, y: 0 }}
+                className="group cursor-pointer shrink-0 snap-center w-[85vw]"
               >
-                <img
-                  src={award.imgUrl}
-                  alt={award.title}
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full h-auto block transition-transform duration-1000 opacity-100 md:opacity-80 md:group-hover:scale-[1.05] md:group-hover:opacity-100"
-                />
-
-                {/* Thin overlay to map the dark tone in references */}
-                <div className="absolute inset-0 bg-transparent transition-colors duration-500 md:bg-black/20 md:group-hover:bg-black/5" />
-
-                {/* Mobile Carousel Navigation */}
-                <div className="absolute inset-x-3 top-1/2 z-20 flex -translate-y-1/2 justify-between md:hidden">
-                  <button
-                    type="button"
-                    aria-label="Previous award"
-                    onClick={(event) => {
-                      event.stopPropagation();
-                      scrollLeft();
-                    }}
-                    className="w-10 h-10 rounded-full border border-white/15 bg-black/45 backdrop-blur-sm flex items-center justify-center text-primary hover:bg-black/70 transition-colors"
-                  >
-                    <ChevronLeft size={20} />
-                  </button>
-                  <button
-                    type="button"
-                    aria-label="Next award"
-                    onClick={(event) => {
-                      event.stopPropagation();
-                      scrollRight();
-                    }}
-                    className="w-10 h-10 rounded-full border border-white/15 bg-black/45 backdrop-blur-sm flex items-center justify-center text-primary hover:bg-black/70 transition-colors"
-                  >
-                    <ChevronRight size={20} />
-                  </button>
+                {/* Image Box */}
+                <div
+                  className="relative w-full overflow-hidden rounded-sm transition-all duration-700"
+                  style={{ backgroundColor: "#0a0a0a" }}
+                >
+                  <img
+                    src={award.imgUrl}
+                    alt={award.title}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-auto block"
+                  />
+                  <div className="absolute inset-0 bg-transparent" />
+                  {/* Mobile Carousel Navigation */}
+                  <div className="absolute inset-x-3 top-1/2 z-20 flex -translate-y-1/2 justify-between">
+                    <button
+                      type="button"
+                      aria-label="Previous award"
+                      onClick={(event) => {
+                        event.stopPropagation();
+                        scrollLeft();
+                      }}
+                      className="w-10 h-10 rounded-full border border-white/15 bg-black/45 backdrop-blur-sm flex items-center justify-center text-primary hover:bg-black/70 transition-colors"
+                    >
+                      <ChevronLeft size={20} />
+                    </button>
+                    <button
+                      type="button"
+                      aria-label="Next award"
+                      onClick={(event) => {
+                        event.stopPropagation();
+                        scrollRight();
+                      }}
+                      className="w-10 h-10 rounded-full border border-white/15 bg-black/45 backdrop-blur-sm flex items-center justify-center text-primary hover:bg-black/70 transition-colors"
+                    >
+                      <ChevronRight size={20} />
+                    </button>
+                  </div>
                 </div>
-              </div>
-
-              {/* Card Footer */}
-              <div className="pt-6 pb-4 flex justify-between items-start border-b border-white/5 group-hover:border-primary/20 transition-colors duration-500">
-                <div className="pr-4">
-                  <h4 className="text-primary text-xl font-normal tracking-tight mb-2 group-hover:translate-x-1 transition-transform duration-500">
-                    {award.title}
-                  </h4>
-                  <p className="text-xs font-normal text-gray-500 uppercase tracking-widest">
-                    {award.desc}
-                  </p>
+                {/* Card Footer */}
+                <div className="pt-6 pb-4 flex justify-between items-start border-b border-white/5">
+                  <div className="pr-4">
+                    <h4 className="text-primary text-xl font-normal tracking-tight mb-2">
+                      {award.title}
+                    </h4>
+                    <p className="text-xs font-normal text-gray-500 uppercase tracking-widest">
+                      {award.desc}
+                    </p>
+                  </div>
+                  <span className="text-[12px] font-mono text-primary whitespace-nowrap mt-1">
+                    {formattedDate}
+                  </span>
                 </div>
-                <span className="text-[12px] font-mono text-primary whitespace-nowrap mt-1">
-                  {formattedDate}
-                </span>
-              </div>
-            </motion.div>
-          );
-        })}
-      </div>
+              </motion.div>
+            );
+          })}
+        </div>
+      )}
+
+      {/* Desktop Masonry — cards distributed left→right into independent columns */}
+      {!isMobileCarousel && (
+        <div className="max-w-[1600px] mx-auto hidden md:flex gap-8">
+          {desktopColumns.map((colAwards, colIdx) => (
+            <div key={colIdx} className="flex-1 flex flex-col gap-8">
+              {colAwards.map((award, cardIdx) => {
+                const formattedDate = formatAwardDate(award.date);
+                const globalIdx = cardIdx * columnCount + colIdx;
+                return (
+                  <motion.div
+                    key={award.id}
+                    role="button"
+                    tabIndex={0}
+                    onClick={() => openAwardModal(award)}
+                    onKeyDown={(event) => {
+                      if (event.key === "Enter" || event.key === " ") {
+                        event.preventDefault();
+                        openAwardModal(award);
+                      }
+                    }}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{
+                      duration: 0.7,
+                      delay: (globalIdx % 4) * 0.15,
+                      ease: [0.16, 1, 0.3, 1],
+                    }}
+                    className="group cursor-pointer"
+                  >
+                    {/* Image Box */}
+                    <div
+                      className="relative w-full overflow-hidden rounded-sm grayscale group-hover:grayscale-0 transition-all duration-700"
+                      style={{ backgroundColor: "#0a0a0a" }}
+                    >
+                      <img
+                        src={award.imgUrl}
+                        alt={award.title}
+                        loading="lazy"
+                        decoding="async"
+                        className="w-full h-auto block transition-transform duration-1000 opacity-80 group-hover:scale-[1.05] group-hover:opacity-100"
+                      />
+                      {/* Thin overlay */}
+                      <div className="absolute inset-0 bg-black/20 group-hover:bg-black/5 transition-colors duration-500" />
+                    </div>
+                    {/* Card Footer */}
+                    <div className="pt-6 pb-4 flex justify-between items-start border-b border-white/5 group-hover:border-primary/20 transition-colors duration-500">
+                      <div className="pr-4">
+                        <h4 className="text-primary text-xl font-normal tracking-tight mb-2 group-hover:translate-x-1 transition-transform duration-500">
+                          {award.title}
+                        </h4>
+                        <p className="text-xs font-normal text-gray-500 uppercase tracking-widest">
+                          {award.desc}
+                        </p>
+                      </div>
+                      <span className="text-[12px] font-mono text-primary whitespace-nowrap mt-1">
+                        {formattedDate}
+                      </span>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+          ))}
+        </div>
+      )}
 
       <AnimatePresence>
         {selectedAward && (
