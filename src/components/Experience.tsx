@@ -13,9 +13,9 @@ const experienceData = [
     location: "Nagpur, MH, India",
     desc: [
       "Fostering innovation and early-stage startup growth by managing technical incubation programs.",
-      "Providing specialized mentorship in product architecture, tech stack selection, and engineering best practices.",
-      "Facilitating technology integration and rapid prototyping pipelines for emerging incubatees.",
-      "Coordinating workshops and driving the overall development of the local entrepreneurial tech ecosystem."
+      "Co-organized Hack The Hardware India 2.0 (STBIF), evaluating 50+ shortlisted teams from 115+ institutions.",
+      "Represented SCET delegation at SEMICON India 2026 (Yashobhoomi, New Delhi), exploring semiconductor ecosystems.",
+      "Providing specialized mentorship in product architecture, IoT innovation, and engineering best practices."
     ]
   },
   {
@@ -63,15 +63,15 @@ const experienceData = [
   {
     id: 5,
     num: "05",
-    role: "Mentor",
+    role: "Mentor & Evaluator",
     company: "Smart India Hackathon",
-    date: "Aug 2025 - Dec 2025 (5 mos)",
+    date: "Aug 2025 - Present",
     location: "India",
     desc: [
-      "Mentored and guided participating teams through the complete hackathon lifecycle.",
-      "Assisted students in ideation, problem-solving, and robust architectural design.",
-      "Provided technical support for troubleshooting complex implementation issues.",
-      "Guided teams in delivering impactful, production-ready solutions for real issues."
+      "Mentored and guided participating teams through internal college rounds and national hackathon lifecycles.",
+      "Evaluated student teams across TGPCET and JDCOEM for SIH 2026 on problem-first thinking and technical feasibility.",
+      "Assisted students in root cause analysis, user research, solution design, and robust architectural implementation.",
+      "Guided teams in delivering impactful, production-ready solutions and qualifying for grand finals."
     ]
   },
   {

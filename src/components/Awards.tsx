@@ -219,6 +219,60 @@ const awardsData = [
     imgUrl:
       "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/awards/aibootcamp.png",
   },
+  {
+    id: 25,
+    num: "25",
+    title: "Hackathon Judge - Krutiverse 2026",
+    desc: "Judged Krutiverse Hackathon 2026 at TGPCET Nagpur alongside Piyush Chafle, evaluating 30+ teams in the elimination round and contributing to the selection of the Top 20 teams and Top 3 winners from 80 participating teams",
+    date: "2026-03-23",
+    imgUrl:
+      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/awards/krutiverseHackathon.jpg",
+  },
+  {
+    id: 26,
+    num: "26",
+    title: "SIH 2026 Mentor - TGPCET",
+    desc: "Mentored student teams during Smart India Hackathon (SIH) 2026 Internal Round at TGPCET Nagpur, guiding on problem-first thinking, root cause analysis, user research, and MVP development",
+    date: "2026-08-19",
+    imgUrl:
+      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/awards/sihmentorTulsiramgaikwad.jpg",
+  },
+  {
+    id: 27,
+    num: "27",
+    title: "Delegation - SEMICON India 2026",
+    desc: "Represented Suryodaya College of Engineering & Technology at SEMICON India 2026 in Yashobhoomi, New Delhi, exploring chip design, fabrication, lithography, packaging, and India's semiconductor ecosystem",
+    date: "2026-09-17",
+    imgUrl:
+      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/awards/semiconIndia.jpg",
+  },
+  {
+    id: 28,
+    num: "28",
+    title: "Organizer & Mentor - Hack The Hardware 2.0",
+    desc: "Contributed to organizing Hack The Hardware India 2.0 as part of STBIF and served as mentor and evaluator for 200+ participants from 115+ institutions across 10+ states with a ₹50,000 prize pool",
+    date: "2026-09-28",
+    imgUrl:
+      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/awards/hackthehardware.jpg",
+  },
+  {
+    id: 29,
+    num: "29",
+    title: "Mentor & Evaluator - SIH 2026 JDCOEM",
+    desc: "Served as mentor and evaluator at the Smart India Hackathon (SIH) 2026 Internal Round at JD College of Engineering and Management, evaluating 15 student teams on innovation and technical feasibility",
+    date: "2026-10-09",
+    imgUrl:
+      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/awards/jdcollegeSIH.jpeg",
+  },
+  {
+    id: 30,
+    num: "30",
+    title: "Hackathon Judge - Ragnarök Agentic AI",
+    desc: "Invited as Judge for Ragnarök Agentic AI Hackathon at IIIT Nagpur, evaluating 25 teams on autonomous agent architectures, technical implementation, innovation, and practical AI potential",
+    date: "2026-10-26",
+    imgUrl:
+      "https://cdn.jsdelivr.net/gh/Kunalpanche/Animated-Portfolio@main/src/assets/awards/IITNRagnarok2026.jpeg",
+  },
 ] satisfies Award[];
 
 const sortedAwardsData = [...awardsData].sort((a, b) =>
